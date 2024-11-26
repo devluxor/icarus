@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Asteroid, DateRange } from "./@types/types";
-import { currentDate } from "./helpers/helpers";
+import { currentDate, sortAsteroidsByName } from "./helpers/helpers";
 import { getAsteroids } from "./services/asteroidAPI";
 
 import { AsteroidTable } from "./components/AsteroidTable";
@@ -33,7 +33,8 @@ function App() {
 
       
       <TableControls 
-        handleDateRange={handleDateRange} 
+        handleDateRange={handleDateRange}
+        handleSortAsteroids={() => sortAsteroidsByName(asteroids as Asteroid[], setAsteroids)} 
       />
 
       {(asteroids && 

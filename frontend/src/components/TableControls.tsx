@@ -4,9 +4,10 @@ import { MouseEvent, useState } from "react"
 
 type TableControlsProps = {
   handleDateRange: (range: DateRange) => void
+  handleSortAsteroids: () => void
 }
 
-export function TableControls({handleDateRange}:TableControlsProps) {
+export function TableControls({handleDateRange, handleSortAsteroids}:TableControlsProps) {
   const [startDate, setStartDate] = useState(currentDate())
   const [endDate, setEndDate] = useState(currentDate())
   const minDate = "1900-01-01" // NASA does not have records before this day
@@ -63,6 +64,7 @@ export function TableControls({handleDateRange}:TableControlsProps) {
           onClick={(e) => handleDateRangeSubmission(e)}
           >Search by date</button>
       </form>
+      <button className='sort-button' onClick={handleSortAsteroids}>Sort by name</button>
     </div>
   )
 }

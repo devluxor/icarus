@@ -9,7 +9,7 @@ export function AsteroidTable ({ asteroids }: AsteroidTableProps) {
   return (
     <table className="asteroid-table">
       <caption>
-        * in meters<br/>
+        *In meters<br/>
         **Measure of the asteroid's brightness (lower values = brighter)
       </caption>
       <thead>
