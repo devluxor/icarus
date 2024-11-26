@@ -47,6 +47,6 @@ export const getAsteroidDetails = asyncHandler( async(req, res) => {
       error: `Error fetching asteroid details: invalid asteroid id ${asteroidID}`
     })
   }
-})
+});
 
 
