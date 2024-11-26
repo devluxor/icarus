@@ -7,6 +7,9 @@ export type DestructuredAsteroid = {
     [key: string]: {[key: string]: number}
   }, 
   is_potentially_hazardous_asteroid: boolean,
+  orbital_data: {
+    [key: string]: string | number | {}
+  }
 }
 
 type SimplifiedAsteroid = {
@@ -104,7 +107,7 @@ export const fetchWithTimeout = async (url: string, timeout = 8000):Promise<any>
 }
 
 export const processAsteroidDetails = (asteroid: DestructuredAsteroid) => {
-  const {id, name, estimated_diameter, is_potentially_hazardous_asteroid, nasa_jpl_url} = asteroid
+  const {id, name, estimated_diameter, is_potentially_hazardous_asteroid, nasa_jpl_url, orbital_data} = asteroid
 
   return {
     id,
@@ -112,5 +115,6 @@ export const processAsteroidDetails = (asteroid: DestructuredAsteroid) => {
     estimatedDiameter: averageDiameter(estimated_diameter.meters),
     nasaURL: nasa_jpl_url, 
     isDangerous: is_potentially_hazardous_asteroid,
+    firstTimeSeen: orbital_data.first_observation_date, 
   }
 }
