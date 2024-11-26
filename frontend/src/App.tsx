@@ -9,6 +9,8 @@ import { TableControls } from "./components/TableControls";
 function App() {
   const [asteroids, setAsteroids] = useState<Asteroid[] | null>(null);
   const [dateRange, setDateRange] = useState<DateRange>({startDate: currentDate(), endDate: currentDate() })
+  const [activeAsteroid, setActiveAsteroid] = useState<Asteroid | undefined>(undefined)
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
 
   useEffect(() => {
     const loadAsteroids = async () => {
@@ -26,6 +28,23 @@ function App() {
     setDateRange({startDate, endDate})
   }
 
+  const toggleOverlay = () => {
+    if (activeAsteroid) {
+      setActiveAsteroid(undefined)
+    }
+
+    setIsOverlayVisible(!isOverlayVisible);
+  };
+
+  const handleActiveAsteroid = (id: string) => {
+    const clickedAsteroid = asteroids?.find(asteroid => asteroid.id === id)
+    if (!clickedAsteroid) return
+
+    setActiveAsteroid(clickedAsteroid)
+    toggleOverlay()
+  }
+
+
   return (
     <div className="main-container">
       <h1 className="title">🌠Icarus</h1>
@@ -37,17 +56,32 @@ function App() {
         handleSortAsteroids={() => sortAsteroidsByName(asteroids as Asteroid[], setAsteroids)} 
       />
 
-      {(asteroids && 
-          <AsteroidTable 
-            asteroids={asteroids}
-        />) 
-        || <h3>Loading asteroids...</h3>}
-
+      {
+        (
+          asteroids && 
+            <AsteroidTable 
+              asteroids={asteroids}
+              handleActiveAsteroid={handleActiveAsteroid}
+            />
+        ) || <h3>Loading asteroids...</h3>
+      }
+      
+      {isOverlayVisible && activeAsteroid && <Overlay activeAsteroid={activeAsteroid} toggleOverlay={toggleOverlay}/>}
     </div>
   )
 }
 
+type OverlayProps = {
+  activeAsteroid: Asteroid,
+  toggleOverlay: () => void,
+}
 
-
+function Overlay({activeAsteroid, toggleOverlay}:OverlayProps) {
+  return (
+    <div className='overlay' onClick={toggleOverlay}>
+      <h1>Asteroid Details</h1>
+    </div>
+  )
+}
 
 export default App

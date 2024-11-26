@@ -1,10 +1,11 @@
 import { Asteroid } from "../@types/types";
 
 type AsteroidTableProps = {
-  asteroids: Asteroid[]
+  asteroids: Asteroid[],
+  handleActiveAsteroid: (id: string) => void,
 }
 
-export function AsteroidTable ({ asteroids }: AsteroidTableProps) {
+export function AsteroidTable ({ asteroids, handleActiveAsteroid }: AsteroidTableProps) {
   
   return (
     <table className="asteroid-table">
@@ -24,7 +25,7 @@ export function AsteroidTable ({ asteroids }: AsteroidTableProps) {
       </thead>
       <tbody>
         {asteroids.map(item => (
-          <tr key={item.id} className="asteroid-table-row">
+          <tr key={item.id} className="asteroid-table-row" onClick={() => handleActiveAsteroid(item.id)}>
             <td>{item.id}</td>
             <td>{item.date}</td>
             <td>{item.name}</td>

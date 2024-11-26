@@ -4,6 +4,7 @@ import App from './App'
 import './styles/reset.css'
 import './styles/titus-system.css'
 import './styles/app.css'
+import './styles/overlay.css'
 
 
 createRoot(document.getElementById('root')!).render(
