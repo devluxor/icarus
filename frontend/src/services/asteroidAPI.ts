@@ -16,3 +16,12 @@ export const getAsteroids = async (range: DateRange) => {
     console.error(error)
   }
 }
+
+export const getAsteroidDetails = async (id: string) => {
+  try {
+    const result = await axiosInstance.get(`/${id}`)
+    return result.data
+  } catch(error) {
+    console.error(error)
+  }
+}
