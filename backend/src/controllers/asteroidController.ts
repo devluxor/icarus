@@ -1,6 +1,6 @@
 import asyncHandler from "express-async-handler";
 import dotenv from "dotenv";
-import { currentDate, processAsteroids } from "utils/helpers";
+import { currentDate, processAsteroids } from "../utils/helpers";
 
 dotenv.config()
 
