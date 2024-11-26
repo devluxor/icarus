@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, MouseEvent } from "react"
 import { Asteroid, DateRange, FavouriteAsteroids } from "./@types/types";
 import { currentDate, sortAsteroidsByName } from "./helpers/helpers";
 import { getAsteroids } from "./services/asteroidAPI";
