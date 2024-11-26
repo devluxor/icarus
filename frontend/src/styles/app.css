@@ -1,0 +1,73 @@
+@import url(./titus-system.css);
+
+body {
+  background-color: rgb(26, 23, 23);
+  color:  var(--TITUS-complementary-color);
+  font-family: "Inter Tight", Arial, Helvetica, sans-serif;
+  font-weight:  var(--TITUS-fwn);;
+}
+
+.title {
+  margin-top: 30px;
+  font-size:  var(--TITUS-frH);
+}
+
+.subtitle {
+  font-size:  var(--TITUS-frE);
+  margin-bottom: 40px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.table-controls, .table-controls > form {
+  display: flex;
+  gap: 10px
+}
+
+.asteroid-table {
+  background-color:  var(--TITUS-mcE);;
+  width: 70%;
+  color: black;
+}
+
+.asteroid-table caption {
+  caption-side: bottom;
+  color:  var(--TITUS-complementary-color);
+  font-weight:  var(--TITUS-fwel);
+  font-style: italic;
+  font-size:  var(--TITUS-frC);;
+}
+
+.asteroid-table thead {
+  background-color: var(--TITUS-mcC);
+  font-weight:  var(--TITUS-fwb);;
+}
+
+.asteroid-table-row:nth-child(even) {
+  background-color:  var(--TITUS-mcC);
+}
+
+.asteroid-table-row {
+  transition: background-color 0.5s ease
+}
+
+.asteroid-table-row:hover {
+  cursor: pointer;
+  background-color:  var(--TITUS-accent-color-5);;
+}
+
+.asteroid-table td {
+  height: 25px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+
+
+

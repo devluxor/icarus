@@ -1,0 +1,362 @@
+/* Remove all unnecessary calls later */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+  /* GENERAL SIZES =================================================  */
+
+  /* ===> General Absolute Sizes  */
+
+  --TITUS-sA: calc(var(--base-general-pixel-size) * 0.25px);
+  --TITUS-sB: calc(var(--base-general-pixel-size) * 0.5px);
+  --TITUS-sC: calc(var(--base-general-pixel-size) * 1px);
+  --TITUS-sD: calc(var(--base-general-pixel-size) * 1.5px);
+  --TITUS-sE: calc(var(--base-general-pixel-size) * 2px);
+  --TITUS-sF: calc(var(--base-general-pixel-size) * 3px);
+  --TITUS-sG: calc(var(--base-general-pixel-size) * 4px);
+  --TITUS-sH: calc(var(--base-general-pixel-size) * 5px);
+  --TITUS-sI: calc(var(--base-general-pixel-size) * 6px);
+  --TITUS-sJ: calc(var(--base-general-pixel-size) * 8px);
+  --TITUS-sK: calc(var(--base-general-pixel-size) * 12px);
+  --TITUS-sL: calc(var(--base-general-pixel-size) * 16px);
+  --TITUS-sM: calc(var(--base-general-pixel-size) * 24px);
+  --TITUS-sN: calc(var(--base-general-pixel-size) * 32px);
+  --TITUS-sO: calc(var(--base-general-pixel-size) * 40px);
+  --TITUS-sP: calc(var(--base-general-pixel-size) * 48px);
+  --TITUS-sQ: calc(var(--base-general-pixel-size) * 56px);
+  --TITUS-sR: calc(var(--base-general-pixel-size) * 62px);
+  --TITUS-sS: calc(var(--base-general-pixel-size) * 70px);
+  --TITUS-sT: calc(var(--base-general-pixel-size) * 76px);
+  --TITUS-sU: calc(var(--base-general-pixel-size) * 84px);
+  --TITUS-sV: calc(var(--base-general-pixel-size) * 92px);
+  --TITUS-sW: calc(var(--base-general-pixel-size) * 100px);
+  --TITUS-sX: calc(var(--base-general-pixel-size) * 108px);
+  --TITUS-sY: calc(var(--base-general-pixel-size) * 116px);
+  --TITUS-sZ: calc(var(--base-general-pixel-size) * 124px);
+
+  /* ===> General Relative Sizes  */
+
+  --TITUS-srA: calc(1rem * 0.25);
+  --TITUS-srB: calc(1rem * 0.5);
+  --TITUS-srC: calc(1rem * 1);
+  --TITUS-srD: calc(1rem * 1.5);
+  --TITUS-srE: calc(1rem * 2);
+  --TITUS-srF: calc(1rem * 3);
+  --TITUS-srG: calc(1rem * 4);
+  --TITUS-srH: calc(1rem * 5);
+  --TITUS-srI: calc(1rem * 6);
+  --TITUS-srJ: calc(1rem * 8);
+  --TITUS-srK: calc(1rem * 12);
+  --TITUS-srL: calc(1rem * 16);
+  --TITUS-srM: calc(1rem * 24);
+  --TITUS-srN: calc(1rem * 32);
+  --TITUS-srO: calc(1rem * 40);
+  --TITUS-srP: calc(1rem * 48);
+  --TITUS-srQ: calc(1rem * 56);
+  --TITUS-srR: calc(1rem * 62);
+  --TITUS-srS: calc(1rem * 70);
+  --TITUS-srT: calc(1rem * 76);
+  --TITUS-srU: calc(1rem * 84);
+  --TITUS-srV: calc(1rem * 92);
+  --TITUS-srW: calc(1rem * 100);
+  --TITUS-srX: calc(1rem * 108);
+  --TITUS-srY: calc(1rem * 116);
+  --TITUS-srZ: calc(1rem * 124);
+
+  /* FONTS =========================================================  */
+
+  /* ===> Absolute Font Sizes  */
+
+  --TITUS-fA: 12px;
+  --TITUS-fB: 14px;
+  --TITUS-fC: 16px;
+  --TITUS-fD: 18px;
+  --TITUS-fE: 20px;
+  --TITUS-fF: 24px;
+  --TITUS-fG: 30px;
+  --TITUS-fH: 36px;
+  --TITUS-fI: 48px;
+  --TITUS-fJ: 60px;
+  --TITUS-fK: 84px;
+  --TITUS-fL: 96px;
+  --TITUS-fM: 108px;
+  --TITUS-fN: 120px;
+  --TITUS-fO: 144px;
+  --TITUS-fP: 180px;
+  --TITUS-fQ: 216px;
+  --TITUS-fR: 288px;
+  --TITUS-fS: 360px;
+  --TITUS-fT: 432px;
+  --TITUS-fU: 504px;
+  --TITUS-fV: 576px;
+  --TITUS-fW: 648px;
+  --TITUS-fX: 720px;
+  --TITUS-fY: 864px;
+
+  /* ===> Relative Font Sizes  */
+    
+  /* General Relative Values for Fonts, equivalent to the previous values,
+     assuming 1rem = 16px 
+  */
+
+  --TITUS-frA: 0.25rem; /* Default = 4px*/  
+  --TITUS-frB: 0.5rem; /* Default = 8px*/  
+  --TITUS-frC: 1rem; /* Default = 16px*/  
+  --TITUS-frD: 1.5rem; /* Default = 24px*/  
+  --TITUS-frE: 2rem; /* Default = 32px*/  
+  --TITUS-frF: 3rem; /* Default = 48px*/  
+  --TITUS-frG: 4rem; /* Default = 64px*/  
+  --TITUS-frH: 5rem; /* Default = 80px*/  
+  --TITUS-frI: 6rem; /* Default = 96px*/  
+  --TITUS-frJ: 8rem; /* Default = 128px*/  
+  --TITUS-frK: 12rem; /* Default = 192px*/  
+  --TITUS-frL: 16rem; /* Default = 256px*/  
+  --TITUS-frM: 24rem; /* Default = 384px*/  
+  --TITUS-frN: 32rem; /* Default = 512px*/  
+  --TITUS-frO: 40rem; /* Default = 640px*/  
+  --TITUS-frP: 48rem; /* Default = 768px*/  
+  --TITUS-frQ: 56rem; /* Default = 896px*/  
+  --TITUS-frR: 62rem; /* Default = 992px*/  
+  --TITUS-frS: 70rem; /* Default = 1120px*/  
+  --TITUS-frT: 76rem; /* Default = 1216px*/  
+  --TITUS-frU: 84rem; /* Default = 1344px*/  
+  --TITUS-frV: 92rem; /* Default = 1472px*/  
+  --TITUS-frW: 100rem; /* Default = 1600px*/  
+  --TITUS-frX: 108rem; /* Default = 1728px*/  
+  --TITUS-frY: 116rem; /* Default = 1856px*/  
+  --TITUS-frZ: 124rem; /* Default = 1984px*/  
+
+  /* ===> Font Weights  */
+
+  /* fwl => [f]ont[w]eight[l]ight == LIGHT */
+  /* fwn => [f]ont[w]eight[n]eutral == NEUTRAL*/
+  /* fwb => [f]ont[w]eight[b]old == BOLD */
+  /* etc... */
+
+  --TITUS-fwt: 100; /* Thin */
+  --TITUS-fwel: 200; /* Extra Light */
+  --TITUS-fwl: 300; /* Light */
+  --TITUS-fwn: 400; /* Neutral */
+  --TITUS-fwm: 500; /* Medium */
+  --TITUS-fwsb: 600; /* Semi Bold */
+  --TITUS-fwb: 700; /* Bold */
+  --TITUS-fweb: 800; /* Extra Bold */
+  --TITUS-fwbl: 900; /* Black */
+
+  /* COLORS ========================================================  */
+
+  /* ===> Samples: */
+
+  --TITUS-main-color:          #17191a; /* Main  Color */
+  --TITUS-complementary-color: #e8e6e5; /* Complementary  Color */
+  --TITUS-accent-color-1:      #3d546b; /* Accent Color #1 */
+  --TITUS-accent-color-2:      #9b7e7d; /* Accent Color #2 */
+  --TITUS-accent-color-3:      #e1b6ab; /* Accent Color #3 */
+  --TITUS-accent-color-4:      #d66e2c; /* Accent Color #4 */
+  --TITUS-accent-color-5:      #8cc5ec; /* Accent Color #5 */
+
+  /* ===>  Main color  */
+
+  /* Tints  */
+
+  --TITUS-mcA: #e8e8e8;
+  --TITUS-mcB: #d1d1d1;
+  --TITUS-mcC: #b9baba;
+  --TITUS-mcD: #a2a3a3;
+  --TITUS-mcE: #8b8c8d;
+  --TITUS-mcF: #747576;
+  --TITUS-mcG: #5d5e5f;
+  --TITUS-mcH: #454748;
+  --TITUS-mcI: #2e3031;
+
+  /* Base color  */
+
+  --TITUS-mcbase: #17191a;
+
+  /* Shades  */
+
+  --TITUS-mcF: #151617;
+  --TITUS-mcG: #121415;
+  --TITUS-mcH: #101212;
+  --TITUS-mcI: #0e0f10;
+  --TITUS-mcJ: #0c0c0d;
+  --TITUS-mcK: #090a0a;
+  --TITUS-mcL: #070808;
+  --TITUS-mcM: #050505;
+  --TITUS-mcN: #020303;
+
+  /* ===>  Complementary color  */
+
+  /* Tints  */
+
+  --TITUS-ccA: #fdfcfc;
+  --TITUS-ccB: #fafafa;
+  --TITUS-ccC: #f8f8f7;
+  --TITUS-ccD: #f6f5f5;
+  --TITUS-ccE: #f4f2f2;
+  --TITUS-ccF: #f1f0ef;
+  --TITUS-ccG: #efeeed;
+  --TITUS-ccH: #edebea;
+  --TITUS-ccI: #eae8e8;
+
+  /* Base color  */
+
+  --TITUS-ccbase: #e8e6e5;
+
+  /* Shades  */
+
+  --TITUS-ccF: #d1cfce;
+  --TITUS-ccG: #bab8b7;
+  --TITUS-ccH: #a2a1a0;
+  --TITUS-ccI: #8b8a89;
+  --TITUS-ccJ: #747372;
+  --TITUS-ccK: #5d5c5c;
+  --TITUS-ccL: #464545;
+  --TITUS-ccM: #2e2e2e;
+  --TITUS-ccN: #171717;
+
+  /* ===>  Accent color #1  */
+
+  /* Tints  */
+
+  --TITUS-ac1A: #eceef0;
+  --TITUS-ac1B: #d8dde1;
+  --TITUS-ac1C: #c5ccd3;
+  --TITUS-ac1D: #b1bbc4;
+  --TITUS-ac1E: #9eaab5;
+  --TITUS-ac1F: #8b98a6;
+  --TITUS-ac1G: #778797;
+  --TITUS-ac1H: #647689;
+  --TITUS-ac1I: #50657a;
+
+  /* Base color  */
+
+  --TITUS-ac1base: #3d546b;
+
+  /* Shades  */
+
+  --TITUS-ac1F: #374c60;
+  --TITUS-ac1G: #314356;
+  --TITUS-ac1H: #2b3b4b;
+  --TITUS-ac1I: #253240;
+  --TITUS-ac1J: #1e2a36;
+  --TITUS-ac1K: #18222b;
+  --TITUS-ac1L: #121920;
+  --TITUS-ac1M: #0c1115;
+  --TITUS-ac1N: #06080b;
+
+  /* ===>  Accent color #2  */
+
+  /* Tints  */
+
+  --TITUS-ac2A: #f5f2f2;
+  --TITUS-ac2B: #ebe5e5;
+  --TITUS-ac2C: #e1d8d8;
+  --TITUS-ac2D: #d7cbcb;
+  --TITUS-ac2E: #cdbebe;
+  --TITUS-ac2F: #c3b2b1;
+  --TITUS-ac2G: #b9a5a4;
+  --TITUS-ac2H: #af9897;
+  --TITUS-ac2I: #a58b8a;
+
+  /* Base color  */
+
+  --TITUS-ac2base: #9b7e7d;
+
+  /* Shades  */
+
+  --TITUS-ac2F: #8c7170;
+  --TITUS-ac2G: #7c6564;
+  --TITUS-ac2H: #6c5858;
+  --TITUS-ac2I: #5d4c4b;
+  --TITUS-ac2J: #4e3f3e;
+  --TITUS-ac2K: #3e3232;
+  --TITUS-ac2L: #2e2626;
+  --TITUS-ac2M: #1f1919;
+  --TITUS-ac2N: #100d0d;
+
+  /* ===>  Accent color #3  */
+
+  /* Tints  */
+
+  --TITUS-ac3A: #fcf8f7;
+  --TITUS-ac3B: #f9f0ee;
+  --TITUS-ac3C: #f6e9e6;
+  --TITUS-ac3D: #f3e2dd;
+  --TITUS-ac3E: #f0dad5;
+  --TITUS-ac3F: #edd3cd;
+  --TITUS-ac3G: #eaccc4;
+  --TITUS-ac3H: #e7c5bc;
+  --TITUS-ac3I: #e4bdb3;
+
+  /* Base color  */
+
+  --TITUS-ac3base: #e1b6ab;
+
+  /* Shades  */
+
+  --TITUS-ac3F: #caa49a;
+  --TITUS-ac3G: #b49289;
+  --TITUS-ac3H: #9e7f78;
+  --TITUS-ac3I: #876d67;
+  --TITUS-ac3J: #705b56;
+  --TITUS-ac3K: #5a4944;
+  --TITUS-ac3L: #443733;
+  --TITUS-ac3M: #2d2422;
+  --TITUS-ac3N: #171211;
+
+  /* ===>  Accent color #4  */
+
+  /* Tints  */
+
+  --TITUS-ac4A: #fbf0ea;
+  --TITUS-ac4B: #f7e2d5;
+  --TITUS-ac4C: #f3d4c0;
+  --TITUS-ac4D: #efc5ab;
+  --TITUS-ac4E: #eab696;
+  --TITUS-ac4F: #e6a880;
+  --TITUS-ac4G: #e29a6b;
+  --TITUS-ac4H: #de8b56;
+  --TITUS-ac4I: #da7d41;
+
+  /* Base color  */
+
+  --TITUS-ac4base: #d66e2c;
+
+  /* Shades  */
+
+  --TITUS-ac4F: #c16328;
+  --TITUS-ac4G: #ab5823;
+  --TITUS-ac4H: #964d1f;
+  --TITUS-ac4I: #80421a;
+  --TITUS-ac4J: #6b3716;
+  --TITUS-ac4K: #562c12;
+  --TITUS-ac4L: #40210d;
+  --TITUS-ac4M: #2b1609;
+  --TITUS-ac4N: #150b04;
+
+  /* BORDERS ======================================================== */
+
+  --TITUS-br: 5px;
+  --TITUS-bw: 1px;
+
+  /* SHADOWS ======================================================== */
+
+  --TITUS-sh-light: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --TITUS-sh-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --TITUS-sh-dark: 0 8px 16px rgba(0, 0, 0, 0.25);
+  --TITUS-sh-inner: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  --TITUS-sh-outline: 0 0 0 3px rgba(66, 153, 225, 0.6);
+
+  /* BREAKPOINTS ==================================================== */
+
+  --TITUS-break-xs: 480px; /* Extra small devices (e.g., phones) */
+  --TITUS-break-s: 768px; /* Small devices (e.g., tablets)  */
+  --TITUS-break-m: 1024px; /* Medium devices (e.g., small laptops) */
+  --TITUS-break-l: 1280px; /* Large devices (e.g., laptops and desktops) */
+  --TITUS-break-xl: 1440px; /* Extra large devices (e.g., large desktops) */
+  --TITUS-break-xxl: 1600px; /* Ultra-large devices (e.g., large monitors) */
+
+  /* OTHER VARIABLES ===============================================  */
+
+}
