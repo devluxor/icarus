@@ -1,4 +1,4 @@
-type DestructuredAsteroid = {
+export type DestructuredAsteroid = {
   id: string, 
   name: string, 
   nasa_jpl_url: string, 
