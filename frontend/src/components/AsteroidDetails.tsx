@@ -29,10 +29,11 @@ export function AsteroidDetails({asteroid, toggleOverlay}: AsteroidDetailsProps)
         <>
           <ul>
             <li className="id">ID: {asteroid.id}</li>
-            <li className="last-seen">Last seen: {asteroid.date}</li>
-            <li className="diameter" >Estimated diameter: {asteroid.estimatedDiameter}</li>
+            <li className="last-seen">First time seen: {asteroidDetails.firstTimeSeen}</li>
+            <li className="last-seen">Last time seen: {asteroid.date}</li>
+            <li className="diameter" >Estimated diameter: {asteroid.estimatedDiameter}m</li>
             <li className="magnitude">Absolute magnitude: {asteroid.absoluteMagnitude}</li>
-            <li className="dangerous">Is it Dangerous?: {asteroid.isDangerous ? 'Yes' : 'No'}</li>
+            <li className="dangerous">Is it dangerous?: {asteroid.isDangerous ? 'Yes' : 'No'}</li>
           <li><a href={asteroidDetails.nasaURL} target="_blank">Link to NASA detailed page</a></li>
           </ul>
         </> 
