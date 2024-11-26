@@ -58,6 +58,29 @@ export const averageDiameter = (estimated_diameter: any) => {
   return (estimated_diameter_min + estimated_diameter_max / 2).toFixed(2)
 }
 
+export const isValidDateFormat = (dateString: string) => {
+
+  // Regular expression to check the format YYYY-MM-DD
+  const dateRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/
+  if (!dateRegex.test(dateString)) {
+      return false
+  }
+
+  const [year, month, day] = dateString.split("-").map(Number)
+  const currentYear = new Date().getFullYear()
+  if (year < 1900 || year > currentYear) {
+      return false;
+  }
+  
+  // Check if the day is valid for the month and year
+  const daysInMonth = new Date(year, month, 0).getDate(); // Get the last day of the month
+  if (day > daysInMonth) {
+      return false
+  }
+
+  return true
+}
+
 export const isValidDateRange = (startDate:string, endDate:string) => {
   const epochStartDate = new Date(startDate).getTime()
   const epochEndDate = new Date(endDate).getTime()
