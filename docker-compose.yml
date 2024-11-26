@@ -1,0 +1,26 @@
+services:
+  frontend:
+    container_name: frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3030:80
+    networks:
+      - icarus
+
+  backend:
+    container_name: backend
+    hostname: backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    env_file: "./backend/.env"
+    networks:
+      - icarus
+
+networks:
+  icarus:
+    name: icarus
