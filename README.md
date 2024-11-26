@@ -55,5 +55,4 @@ The most important aspects that are pending to do are:
 - More processing work of the asteroids for a fuller picture of the asteroid characteristics and astronomical history, as well as improve the performance of the application.
 - Further Docker Image building optimization
 
-With limited time, I had to prioritize between having adding more features and implement unit, integration and E2E tests. I chose the former, as in a short time, in a project of these characteristics, my opinion is that is worth risking the sacrifice of code coverage for a more enjoyable experience, specially with the help of the type safety that TypeScript provides. With more time on my, no doubt I wouldn't hesitate on implementing a full testing suite.
-
+With limited time, and limited requests with a single key to the NASA API, I had to prioritize between having adding more features and implement complete unit, integration and E2E tests. I chose the former, as in a short time, in a project of these characteristics, my opinion is that is worth risking the sacrifice of code coverage for a more enjoyable experience, specially with the help of the type safety that TypeScript provides. With more time on my, no doubt I wouldn't hesitate on implementing a full testing suite.
