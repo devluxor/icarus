@@ -14,7 +14,7 @@ function App() {
   const [activeAsteroid, setActiveAsteroid] = useState<Asteroid | undefined>(undefined)
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [favouriteAsteroids, setFavouriteAsteroids] = useLocalStorage<FavouriteAsteroids>('icarus-favourite-asteroids', {})
-
+  const [isOnlyFavoritesMode, setIsOnlyFavoritesMode] = useState<boolean>(false)
 
   useEffect(() => {
     const loadAsteroids = async () => {
@@ -48,6 +48,29 @@ function App() {
     toggleOverlay()
   }
 
+  const toggleFavorite = (e: MouseEvent, asteroidID: string) => {
+    e.stopPropagation()
+    if (favouriteAsteroids[asteroidID]) {
+      setFavouriteAsteroids(previousState => {
+        const newList: any = {...previousState}
+        delete newList[asteroidID]
+        return newList
+      })
+
+      return
+    }
+
+    setFavouriteAsteroids(previousState => {
+      const newList: any = {...previousState}
+      newList[asteroidID] = true
+      return newList
+    })
+  }
+
+  const toggleFavouriteAsteroids = () => {
+    setIsOnlyFavoritesMode(!isOnlyFavoritesMode)
+  }
+
 
   return (
     <div className="main-container">
@@ -58,6 +81,8 @@ function App() {
       <TableControls 
         handleDateRange={handleDateRange}
         handleSortAsteroids={() => sortAsteroidsByName(asteroids as Asteroid[], setAsteroids)} 
+        handleToggleFavouriteAsteroids={toggleFavouriteAsteroids}
+        isOnlyFavoritesMode={isOnlyFavoritesMode}
       />
 
       {
@@ -66,6 +91,9 @@ function App() {
             <AsteroidTable 
               asteroids={asteroids}
               handleActiveAsteroid={handleActiveAsteroid}
+              toggleFavorite={toggleFavorite} 
+              favouriteAsteroids={favouriteAsteroids}
+              isOnlyFavoritesMode={isOnlyFavoritesMode}
             />
         ) || <h3>Loading asteroids...</h3>
       }

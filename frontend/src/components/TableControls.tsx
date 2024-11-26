@@ -1,13 +1,15 @@
+import { MouseEvent, useState } from "react"
 import { currentDate, isValidDateRange, isDateRangeWithinAWeek } from "../helpers/helpers"
 import { DateRange } from "../@types/types"
-import { MouseEvent, useState } from "react"
 
 type TableControlsProps = {
   handleDateRange: (range: DateRange) => void
   handleSortAsteroids: () => void
+  handleToggleFavouriteAsteroids: () => void
+  isOnlyFavoritesMode: boolean
 }
 
-export function TableControls({handleDateRange, handleSortAsteroids}:TableControlsProps) {
+export function TableControls({isOnlyFavoritesMode, handleDateRange, handleSortAsteroids, handleToggleFavouriteAsteroids}:TableControlsProps) {
   const [startDate, setStartDate] = useState(currentDate())
   const [endDate, setEndDate] = useState(currentDate())
   const minDate = "1900-01-01" // NASA does not have records before this day
@@ -65,6 +67,11 @@ export function TableControls({handleDateRange, handleSortAsteroids}:TableContro
           >Search by date</button>
       </form>
       <button className='sort-button' onClick={handleSortAsteroids}>Sort by name</button>
+      <button className='show-favourites-button' onClick={handleToggleFavouriteAsteroids}>
+        {isOnlyFavoritesMode? 'Display All Asteroids': 'Show Only Favourite Asteroids'}
+      </button>
     </div>
   )
 }
+
+
