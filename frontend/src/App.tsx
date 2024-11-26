@@ -10,6 +10,7 @@ import { AsteroidDetails } from "./components/AsteroidDetails";
 
 function App() {
   const [asteroids, setAsteroids] = useState<Asteroid[] | null>(null);
+  const [isAsteroidDataLoading, setIsAsteroidDataLoading] = useState(false);
   const [dateRange, setDateRange] = useState<DateRange>({startDate: currentDate(), endDate: currentDate() })
   const [activeAsteroid, setActiveAsteroid] = useState<Asteroid | undefined>(undefined)
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
@@ -17,9 +18,13 @@ function App() {
   const [isOnlyFavoritesMode, setIsOnlyFavoritesMode] = useState<boolean>(false)
 
   useEffect(() => {
+    setIsAsteroidDataLoading(true)
     const loadAsteroids = async () => {
       const asteroidsRaw = await getAsteroids(dateRange)
-      setAsteroids(asteroidsRaw)
+      if (asteroidsRaw) {
+        setAsteroids(asteroidsRaw)
+        setIsAsteroidDataLoading(false)
+      }
     }
 
     loadAsteroids()
@@ -81,19 +86,17 @@ function App() {
         isOnlyFavoritesMode={isOnlyFavoritesMode}
       />
 
-      {
-        (
-          asteroids && 
-            <AsteroidTable 
-              asteroids={asteroids}
-              handleActiveAsteroid={handleActiveAsteroid}
-              toggleFavorite={toggleFavorite} 
-              favouriteAsteroids={favouriteAsteroids}
-              isOnlyFavoritesMode={isOnlyFavoritesMode}
-            />
-        ) || <h3>Loading asteroids...</h3>
+      {isAsteroidDataLoading && <h3>Loading asteroids...</h3>}
+      {!isAsteroidDataLoading && asteroids && 
+        <AsteroidTable 
+          asteroids={asteroids}
+          handleActiveAsteroid={handleActiveAsteroid}
+          toggleFavorite={toggleFavorite} 
+          favouriteAsteroids={favouriteAsteroids}
+          isOnlyFavoritesMode={isOnlyFavoritesMode}
+        />
       }
-
+      
       {isOverlayVisible && activeAsteroid && <Overlay activeAsteroid={activeAsteroid} toggleOverlay={toggleOverlay}/>}
     </div>
   )
