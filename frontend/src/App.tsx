@@ -5,6 +5,7 @@ import { getAsteroids } from "./services/asteroidAPI";
 
 import { AsteroidTable } from "./components/AsteroidTable";
 import { TableControls } from "./components/TableControls";
+import { AsteroidDetails } from "./components/AsteroidDetails";
 
 function App() {
   const [asteroids, setAsteroids] = useState<Asteroid[] | null>(null);
@@ -65,7 +66,7 @@ function App() {
             />
         ) || <h3>Loading asteroids...</h3>
       }
-      
+
       {isOverlayVisible && activeAsteroid && <Overlay activeAsteroid={activeAsteroid} toggleOverlay={toggleOverlay}/>}
     </div>
   )
@@ -79,7 +80,7 @@ type OverlayProps = {
 function Overlay({activeAsteroid, toggleOverlay}:OverlayProps) {
   return (
     <div className='overlay' onClick={toggleOverlay}>
-      <h1>Asteroid Details</h1>
+      <AsteroidDetails asteroid={activeAsteroid} toggleOverlay={toggleOverlay} />
     </div>
   )
 }
