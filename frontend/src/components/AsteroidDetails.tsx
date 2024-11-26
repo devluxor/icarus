@@ -7,8 +7,12 @@ type AsteroidDetailsProps = {
   toggleOverlay: () => void,
 }
 
+type AsteroidDetails = Asteroid & {
+  firstTimeSeen: string
+}
+
 export function AsteroidDetails({asteroid, toggleOverlay}: AsteroidDetailsProps) {
-  const [asteroidDetails, setAsteroidDetails] = useState<any>(null)
+  const [asteroidDetails, setAsteroidDetails] = useState<AsteroidDetails | null>(null)
 
   useEffect(() => {
     const loadAsteroidDetails = async () => {
