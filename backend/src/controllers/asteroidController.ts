@@ -2,7 +2,6 @@ import asyncHandler from "express-async-handler";
 import dotenv from "dotenv";
 import { currentDate, processAsteroids } from "utils/helpers";
 
-
 dotenv.config()
 
 const ASTEROID_API_URL = process.env.ASTEROID_API_URL
