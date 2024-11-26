@@ -19,7 +19,7 @@ For ease of use, this application has been containerized using Docker Compose (D
 
 1. Clone this repository:
 
-```txt
+```sh
 git clone https://github.com/devluxor/icarus.git
 ```
 
@@ -61,7 +61,13 @@ With limited time, and limited requests with a single key to the NASA API (it re
 
 ### Backend (Node version 22.11.0)
 
-1. In the `backend` folder of the root directory, create a file `.env` with the following content:
+1. Clone this repository:
+
+```sh
+git clone https://github.com/devluxor/icarus.git
+```
+
+2. In the `backend` folder of the root directory, create a file `.env` with the following content:
 
 ```txt
 PORT=8080
@@ -72,19 +78,19 @@ API_KEY=<API KEY>
 
 Note that the API KEY must be either `DEMO_KEY` (it won't allow for multiple successive requests, as it works just for demo purposes) or **an official NASA API key**, which can be easily obtainable by completing this [form](https://api.nasa.gov/#signUp).
 
-2. Install all dependencies via:
+3. Install all dependencies via:
 
 ```sh
 npm install
 ```
 
-3. Then, start the server by running:
+4. Then, start the server by running:
 
 ```sh
 npm run start:dev
 ```
 
-4. The server will be accessible via the URL <http://localhost:8080/api/asteroids>
+5. The server will be accessible via the URL <http://localhost:8080/api/asteroids>
 
 ### Frontend (React version 18.3.1)
 
