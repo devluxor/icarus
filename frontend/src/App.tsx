@@ -4,7 +4,7 @@ import { currentDate } from "./helpers/helpers";
 import { getAsteroids } from "./services/asteroidAPI";
 
 import { AsteroidTable } from "./components/AsteroidTable";
-
+import { TableControls } from "./components/TableControls";
 
 function App() {
   const [asteroids, setAsteroids] = useState<Asteroid[] | null>(null);
@@ -22,10 +22,19 @@ function App() {
     loadAsteroids()
   }, [dateRange])
 
+  const handleDateRange = ({startDate, endDate}: DateRange) => {
+    setDateRange({startDate, endDate})
+  }
+
   return (
     <div className="main-container">
       <h1 className="title">🌠Icarus</h1>
       <h2 className="subtitle">Find your favourite asteroids!</h2>
+
+      
+      <TableControls 
+        handleDateRange={handleDateRange} 
+      />
 
       {(asteroids && 
           <AsteroidTable 
