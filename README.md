@@ -45,3 +45,12 @@ I opted to expose the backend server API as well in order for the user to query 
 
 In other circumstances, I would have used a reverse proxy as a third element in the containers' orchestration, and I would only have this proxy's port exposed to the public for greater security. Note the `.env` file, although it does not contain important secrets, is not copied to the images, as the environment variables are passed directly, on runtime, when the image is created and run.
 
+## Pending tasks; todos.
+
+The most important aspects that are pending to do are: 
+
+- Tests
+- API pagination
+- More processing work of the asteroids, as well as improve the performance of the application.
+
+With limited time, I had to prioritize between having adding more features and implement unit, integration and E2E tests. I chose the former, as in a short time, in a project of these characteristics, my opinion is that is worth risking the sacrifice of code coverage for a more enjoyable experience, specially with the aid of the type safety that TypeScript provides. With more time, no doubt I wouldn't hesitate on implementing a full testing suite.
