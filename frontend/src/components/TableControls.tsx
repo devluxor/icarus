@@ -10,31 +10,31 @@ type TableControlsProps = {
 }
 
 export function TableControls({isOnlyFavoritesMode, handleDateRange, handleSortAsteroids, handleToggleFavouriteAsteroids}:TableControlsProps) {
-  const [startDate, setStartDate] = useState(currentDate())
-  const [endDate, setEndDate] = useState(currentDate())
-  const minDate = "1900-01-01" // NASA does not have records before this day
-  const maxDate = currentDate()
+  const [startDate, setStartDate] = useState(currentDate());
+  const [endDate, setEndDate] = useState(currentDate());
+  const minDate = "1900-01-01"; // NASA does not have records before this day
+  const maxDate = currentDate();
 
   const handleStartDate = (start: string) => {
-    setStartDate(start)
+    setStartDate(start);
   }
 
   const handleEndDate = (end: string) => {
-    setEndDate(end)
+    setEndDate(end);
   }
 
   const handleDateRangeSubmission = (e: MouseEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!isValidDateRange({startDate, endDate})) {
-      alert('The start date of the range must be earlier or equal to the end date!')
-      return
+      alert('The start date of the range must be earlier or equal to the end date!');
+      return;
     } else if (!isDateRangeWithinAWeek({startDate, endDate})) {
-      alert('The range must be equal or shorter than a week!')
-      return
+      alert('The range must be equal or shorter than a week!');
+      return;
     }
 
-    handleDateRange({startDate, endDate})
+    handleDateRange({startDate, endDate});
   }
 
   return (

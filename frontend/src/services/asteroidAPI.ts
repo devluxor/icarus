@@ -7,21 +7,21 @@ const axiosInstance = axios.create({
 })
 
 export const getAsteroids = async (range: DateRange) => {
-  const {startDate, endDate}: DateRange = range
+  const {startDate, endDate}: DateRange = range;
   
   try {
-    const result = await axiosInstance.get(`?startDate=${startDate}&endDate=${endDate}`)
-    return result.data
+    const result = await axiosInstance.get(`?startDate=${startDate}&endDate=${endDate}`);
+    return result.data;
   } catch(error) {
-    console.error(error)
+    console.error(error);
   }
 }
 
 export const getAsteroidDetails = async (id: string) => {
   try {
-    const result = await axiosInstance.get(`/${id}`)
-    return result.data
+    const result = await axiosInstance.get(`/${id}`);
+    return result.data;
   } catch(error) {
-    console.error(error)
+    console.error(error);
   }
 }

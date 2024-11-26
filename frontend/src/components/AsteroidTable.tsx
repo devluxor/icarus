@@ -20,10 +20,10 @@ export function AsteroidTable ({
 }: AsteroidTableProps) {
   const displayedAsteroids = asteroids.filter(asteroid => {
     if (isOnlyFavoritesMode) {
-      return favouriteAsteroids[asteroid.id]
+      return favouriteAsteroids[asteroid.id];
     }
 
-    return asteroid
+    return asteroid;
   })
   
   if (displayedAsteroids.length === 0) return <h4>No Favourite Asteroids yet!</h4>

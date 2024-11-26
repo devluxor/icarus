@@ -18,9 +18,6 @@ function App() {
 
   useEffect(() => {
     const loadAsteroids = async () => {
-      if (asteroids) {
-        setAsteroids(null)
-      }
       const asteroidsRaw = await getAsteroids(dateRange)
       setAsteroids(asteroidsRaw)
     }
@@ -53,7 +50,7 @@ function App() {
     
     if (favouriteAsteroids[asteroidID]) {
       setFavouriteAsteroids(previousState => {
-        const newList: any = {...previousState}
+        const newList: FavouriteAsteroids = {...previousState}
         delete newList[asteroidID]
         return newList
       })
@@ -62,7 +59,7 @@ function App() {
     }
 
     setFavouriteAsteroids(previousState => {
-      const newList: any = {...previousState}
+      const newList: FavouriteAsteroids = {...previousState}
       newList[asteroidID] = true
       return newList
     })

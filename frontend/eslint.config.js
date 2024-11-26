@@ -25,8 +25,5 @@ export default tseslint.config(
       ],
       "vitest/expect-expect": "off",
     },
-    globals: {
-      ...vitest.environments.env.globals,
-    },
   },
 )

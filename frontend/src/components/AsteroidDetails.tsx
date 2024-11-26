@@ -12,15 +12,15 @@ type AsteroidDetails = Asteroid & {
 }
 
 export function AsteroidDetails({asteroid, toggleOverlay}: AsteroidDetailsProps) {
-  const [asteroidDetails, setAsteroidDetails] = useState<AsteroidDetails | null>(null)
+  const [asteroidDetails, setAsteroidDetails] = useState<AsteroidDetails | null>(null);
 
   useEffect(() => {
     const loadAsteroidDetails = async () => {
-      const asteroidDetails = await getAsteroidDetails(asteroid.id)
-      setAsteroidDetails(asteroidDetails)
+      const asteroidDetails = await getAsteroidDetails(asteroid.id);
+      setAsteroidDetails(asteroidDetails);
     }
-    loadAsteroidDetails()
-  }, [])
+    loadAsteroidDetails();
+  }, [asteroid])
 
   return (
     <div className="asteroid-details" onClick={(e) => e.stopPropagation()}>
