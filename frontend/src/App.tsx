@@ -3,6 +3,8 @@ import { Asteroid, DateRange } from "./@types/types";
 import { currentDate } from "./helpers/helpers";
 import { getAsteroids } from "./services/asteroidAPI";
 
+import { AsteroidTable } from "./components/AsteroidTable";
+
 
 function App() {
   const [asteroids, setAsteroids] = useState<Asteroid[] | null>(null);
@@ -24,6 +26,13 @@ function App() {
     <div className="main-container">
       <h1 className="title">🌠Icarus</h1>
       <h2 className="subtitle">Find your favourite asteroids!</h2>
+
+      {(asteroids && 
+          <AsteroidTable 
+            asteroids={asteroids}
+        />) 
+        || <h3>Loading asteroids...</h3>}
+
     </div>
   )
 }
