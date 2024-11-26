@@ -15,11 +15,34 @@
 
 .asteroid-details {
   background-color: var(--TITUS-accent-color-1);;
-  border: 1px solid black;
-  width: 600px;
+  border: 2px solid var(--TITUS-accent-color-5);
+  width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap:  30px;
+}
+
+.asteroid-details .details-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.details-title .name {
+  font-size:  var(--TITUS-fH);;
+}
+
+.details-title .logo {
+  font-size:  var(--TITUS-fG);;
+}
+
+.asteroid-details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
