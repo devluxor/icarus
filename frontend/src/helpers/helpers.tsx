@@ -1,18 +1,18 @@
 import { DateRange, Asteroid } from "../@types/types"
 
 export const currentDate = ():string => {
-  const date = new Date()
-  const formattedDate = date.toISOString().split('T')[0]
-  return formattedDate
+  const date = new Date();
+  const formattedDate = date.toISOString().split('T')[0];
+  return formattedDate;
 }
 
 export const isValidDateRange = (dateRange:DateRange) => {
-  const {startDate, endDate} = dateRange
+  const {startDate, endDate} = dateRange;
 
-  const epochStartDate = new Date(startDate).getTime()
-  const epochEndDate = new Date(endDate).getTime()
+  const epochStartDate = new Date(startDate).getTime();
+  const epochEndDate = new Date(endDate).getTime();
 
-  return epochStartDate <= epochEndDate
+  return epochStartDate <= epochEndDate;
 }
 
 export const isDateRangeWithinAWeek = ({startDate, endDate}: DateRange) => {
