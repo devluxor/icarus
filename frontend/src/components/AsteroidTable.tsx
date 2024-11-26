@@ -11,7 +11,13 @@ type AsteroidTableProps = {
   isOnlyFavoritesMode: boolean
 }
 
-export function AsteroidTable ({ asteroids, handleActiveAsteroid, toggleFavorite, favouriteAsteroids, isOnlyFavoritesMode }: AsteroidTableProps) {
+export function AsteroidTable ({ 
+  asteroids, 
+  handleActiveAsteroid, 
+  toggleFavorite, 
+  favouriteAsteroids, 
+  isOnlyFavoritesMode 
+}: AsteroidTableProps) {
   const displayedAsteroids = asteroids.filter(asteroid => {
     if (isOnlyFavoritesMode) {
       return favouriteAsteroids[asteroid.id]

@@ -29,7 +29,7 @@ export const isDateRangeWithinAWeek = ({startDate, endDate}: DateRange) => {
 export const sortAsteroidsByName = (asteroids: Asteroid[], setter: (asteroid: Asteroid[]) => void) => {
   if (!asteroids) return;
 
-  const sortedAsteroids = [...asteroids];
+  const sortedAsteroids = [...asteroids]
   sortedAsteroids.sort((a, b) => {
     const partsNameA = a.name.split(' ', 2)
     const partsNameB = b.name.split(' ', 2)
@@ -42,7 +42,7 @@ export const sortAsteroidsByName = (asteroids: Asteroid[], setter: (asteroid: As
     }
 
     return digitsA - digitsB
-  });
+  })
 
   setter(sortedAsteroids)
 }

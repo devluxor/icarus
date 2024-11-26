@@ -50,6 +50,7 @@ function App() {
 
   const toggleFavorite = (e: MouseEvent, asteroidID: string) => {
     e.stopPropagation()
+    
     if (favouriteAsteroids[asteroidID]) {
       setFavouriteAsteroids(previousState => {
         const newList: any = {...previousState}
@@ -71,13 +72,11 @@ function App() {
     setIsOnlyFavoritesMode(!isOnlyFavoritesMode)
   }
 
-
   return (
     <div className="main-container">
       <h1 className="title">🌠Icarus</h1>
       <h2 className="subtitle">Find your favourite asteroids!</h2>
 
-      
       <TableControls 
         handleDateRange={handleDateRange}
         handleSortAsteroids={() => sortAsteroidsByName(asteroids as Asteroid[], setAsteroids)} 
