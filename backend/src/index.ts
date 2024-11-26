@@ -24,5 +24,5 @@ app.use(unknownEndpoint)
 
 
 app.listen(PORT, () => {
-  console.log(`server running on ${PORT}`)
+  console.log(`Icarus server running on ${PORT} 🌠`)
 })
