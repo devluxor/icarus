@@ -12,12 +12,6 @@ const errorHandler = (err: Error, req:Request, res:Response, next:NextFunction) 
     case codes.NOT_FOUND:
       res.json({...errorObject, title: 'Not Found'})
       break
-    case codes.FORBIDDEN:
-      res.json({...errorObject, title: 'Forbidden'})
-      break
-    case codes.UNAUTHORIZED:
-      res.json({...errorObject, title: 'Unauthorized'})
-      break
     case codes.SERVER_ERROR:
       res.json({...errorObject, title: 'Server Error'})
       break
