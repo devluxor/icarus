@@ -102,3 +102,15 @@ export const fetchWithTimeout = async (url: string, timeout = 8000):Promise<any>
 
   return Promise.race([fetch(url), timeoutPromise])
 }
+
+export const processAsteroidDetails = (asteroid: DestructuredAsteroid) => {
+  const {id, name, estimated_diameter, is_potentially_hazardous_asteroid, nasa_jpl_url} = asteroid
+
+  return {
+    id,
+    name: name.replace(/[\(\)]/g, ''),
+    estimatedDiameter: averageDiameter(estimated_diameter.meters),
+    nasaURL: nasa_jpl_url, 
+    isDangerous: is_potentially_hazardous_asteroid,
+  }
+}

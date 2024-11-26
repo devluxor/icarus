@@ -6,7 +6,7 @@ import {
   isValidDateFormat,
   isValidDateRange, 
   isDateRangeWithinAWeek, 
-  DestructuredAsteroid
+  processAsteroidDetails
 } from "../utils/helpers";
 
 dotenv.config()
@@ -18,7 +18,7 @@ const API_KEY = process.env.API_KEY
 //@desc Get Asteroids
 //@route GET /api/asteroid
 //@access public
-export const getAsteroids = asyncHandler( async(req, res) => {
+export const getAsteroids = asyncHandler(async(req, res) => {
   const startDate = req.query.startDate as string || currentDate()
   const endDate = req.query.endDate as string || currentDate()
 
@@ -68,20 +68,3 @@ export const getAsteroidDetails = asyncHandler( async(req, res) => {
 })
 
 
-export const processAsteroidDetails = (asteroid: DestructuredAsteroid) => {
-  const {id, name, estimated_diameter, is_potentially_hazardous_asteroid, nasa_jpl_url} = asteroid
-
-  return {
-    id,
-    name: name.replace(/[\(\)]/g, ''),
-    estimatedDiameter: averageDiameter(estimated_diameter.meters),
-    nasaURL: nasa_jpl_url, 
-    isDangerous: is_potentially_hazardous_asteroid,
-  }
-}
-
-export const averageDiameter = (estimated_diameter: any) => {
-  const {estimated_diameter_min, estimated_diameter_max} = estimated_diameter
-
-  return (estimated_diameter_min + estimated_diameter_max / 2).toFixed(2)
-}
