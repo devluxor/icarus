@@ -12,3 +12,7 @@ export type Asteroid = {
   absoluteMagnitude: string,
   isDangerous: boolean
 }
+
+export type FavouriteAsteroids = {
+  [key: string]: boolean
+}

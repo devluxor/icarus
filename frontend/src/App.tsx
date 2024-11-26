@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import { Asteroid, DateRange } from "./@types/types";
+import { Asteroid, DateRange, FavouriteAsteroids } from "./@types/types";
 import { currentDate, sortAsteroidsByName } from "./helpers/helpers";
 import { getAsteroids } from "./services/asteroidAPI";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 import { AsteroidTable } from "./components/AsteroidTable";
 import { TableControls } from "./components/TableControls";
@@ -12,6 +13,8 @@ function App() {
   const [dateRange, setDateRange] = useState<DateRange>({startDate: currentDate(), endDate: currentDate() })
   const [activeAsteroid, setActiveAsteroid] = useState<Asteroid | undefined>(undefined)
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const [favouriteAsteroids, setFavouriteAsteroids] = useLocalStorage<FavouriteAsteroids>('icarus-favourite-asteroids', {})
+
 
   useEffect(() => {
     const loadAsteroids = async () => {
